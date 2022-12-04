@@ -19,14 +19,14 @@ namespace CC
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            if (login_maskedTextBox.MaskCompleted && pwd_maskedTextBox.Text.Length > 0)
+            if (comboBox.SelectedIndex != -1 && pwd_maskedTextBox.Text.Length > 0)
             {
                 int pwd;
                 if (!int.TryParse(pwd_maskedTextBox.Text, out pwd))
                 {
                     MessageBox.Show("Неправильный логин или пароль!");
                 }
-                else if (!CurrentWorker.Login(login_maskedTextBox.Text, pwd))
+                else if (!CurrentWorker.Login(comboBox.Text, pwd))
                 {
                     MessageBox.Show("Неправильный логин или пароль!");
                 }
@@ -35,7 +35,6 @@ namespace CC
                     WorkerForm workerForm = new WorkerForm();
                     workerForm.FormClosed += (object se, FormClosedEventArgs ee) => { Visible = true; };
                     Visible = false;
-                    login_maskedTextBox.Clear();
                     pwd_maskedTextBox.Clear();
                     workerForm.ShowDialog();
                 }

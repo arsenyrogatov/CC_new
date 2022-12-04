@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.login_button = new System.Windows.Forms.Button();
-            this.login_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.pwd_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,15 +63,6 @@
             this.login_button.UseVisualStyleBackColor = true;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
-            // login_maskedTextBox
-            // 
-            this.login_maskedTextBox.Location = new System.Drawing.Point(332, 28);
-            this.login_maskedTextBox.Mask = "+0 (999) 000-00-00";
-            this.login_maskedTextBox.Name = "login_maskedTextBox";
-            this.login_maskedTextBox.Size = new System.Drawing.Size(132, 25);
-            this.login_maskedTextBox.TabIndex = 3;
-            this.login_maskedTextBox.Text = "79797656532";
-            // 
             // pwd_maskedTextBox
             // 
             this.pwd_maskedTextBox.Location = new System.Drawing.Point(332, 73);
@@ -85,9 +76,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.OldLace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBox);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.login_maskedTextBox);
             this.panel1.Controls.Add(this.pwd_maskedTextBox);
             this.panel1.Controls.Add(this.login_button);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -113,9 +104,9 @@
             this.label1.Font = new System.Drawing.Font("Bookman Old Style", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(329, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 18);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Номер телефона";
+            this.label1.Text = "Должность";
             // 
             // pictureBox1
             // 
@@ -185,6 +176,20 @@
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
             // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            "Бригадир",
+            "Генеральный директор",
+            "Главный бухгалтер",
+            "Архитектор-конструктор",
+            "Менеджер по продажам"});
+            this.comboBox.Location = new System.Drawing.Point(304, 28);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(195, 25);
+            this.comboBox.TabIndex = 7;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -224,7 +229,6 @@
         #endregion
 
         private System.Windows.Forms.Button login_button;
-        private System.Windows.Forms.MaskedTextBox login_maskedTextBox;
         private System.Windows.Forms.MaskedTextBox pwd_maskedTextBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -236,6 +240,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox comboBox;
     }
 }
 
