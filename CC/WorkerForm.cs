@@ -504,6 +504,8 @@ namespace CC
         private void matAdd_button_Click(object sender, EventArgs e)
         {
             AddMaterialForm addClientForm = new AddMaterialForm();
+            
+            addClientForm.matEd_comboBox.Items.AddRange(matEd_comboBox.Items.Cast<Object>().ToArray());
             addClientForm.FormClosed += (s, ee) => { UpdateMaterials(); };
             addClientForm.ShowDialog();
 
@@ -621,9 +623,15 @@ namespace CC
 
         private void prAdd_button_Click(object sender, EventArgs e)
         {
-            Projects.Add();
+            AddPrForm addClientForm = new AddPrForm();
+
+            addClientForm.prWorker_comboBox.Items.AddRange(prWorker_comboBox.Items.Cast<Object>().ToArray());
+            addClientForm.prClient_comboBox.Items.AddRange(prClient_comboBox.Items.Cast<Object>().ToArray());
+            addClientForm.FormClosed += (s, ee) => { UpdateProject(); };
+            addClientForm.ShowDialog();
+            /*Projects.Add();
             MessageBox.Show("Проект добавлен!");
-            UpdateProject();
+            UpdateProject();*/
         }
 
         private void projects_dataGridView_SelectionChanged(object sender, EventArgs e)
@@ -827,6 +835,11 @@ namespace CC
 
                 work.Add();
                 UpdateWork();
+                MessageBox.Show("Работа добавлена!");
+            }
+            else
+            {
+                MessageBox.Show("Работа не добавлена!");
             }
         }
 

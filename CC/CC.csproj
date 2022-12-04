@@ -65,6 +65,12 @@
     <Compile Include="AddMaterialForm.Designer.cs">
       <DependentUpon>AddMaterialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPrForm.Designer.cs">
+      <DependentUpon>AddPrForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddMaterialForm.resx">
       <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPrForm.resx">
+      <DependentUpon>AddPrForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSupForm.resx">
       <DependentUpon>AddSupForm.cs</DependentUpon>

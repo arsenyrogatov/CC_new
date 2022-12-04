@@ -19,11 +19,6 @@ namespace CC
             ewFio_textBox.Text = CurrentWorker.Name;
             ewPas1_maskedTextBox.Text = CurrentWorker.Passport.Split(new char[] {' '})[0];
             ewPas2_maskedTextBox.Text = CurrentWorker.Passport.Split(new char[] {' '})[1];
-            ewBirth_dateTimePicker.Value = CurrentWorker.Birth;
-            ewMale_radioButton.Checked = CurrentWorker.Gen == 'м';
-            ewFem_radioButton.Checked = CurrentWorker.Gen == 'ж';
-            ewJob_textBox.Text = CurrentWorker.Job;
-            ewStage_numericUpDown.Value = CurrentWorker.Stage;
             ewPhone_maskedTextBox.Text = CurrentWorker.Phone;
             ewMail_textBox.Text = CurrentWorker.Mail;
         }
@@ -32,14 +27,14 @@ namespace CC
         {
             
             if (ewFio_textBox.Text.Length > 0 && ewPas1_maskedTextBox.MaskCompleted
-                && ewPas2_maskedTextBox.MaskCompleted && ewJob_textBox.Text.Length > 0
+                && ewPas2_maskedTextBox.MaskCompleted
                 && ewPhone_maskedTextBox.MaskCompleted && ewMail_textBox.Text.Length > 0)
             {
                 Worker worker = new Worker(CurrentWorker.Id,
                     ewFio_textBox.Text, int.Parse(ewPas1_maskedTextBox.Text),
-                    int.Parse(ewPas2_maskedTextBox.Text), ewBirth_dateTimePicker.Value,
-                    ewFem_radioButton.Checked ? 'ж' : 'м', ewJob_textBox.Text,
-                    ((int)ewStage_numericUpDown.Value), ewPhone_maskedTextBox.Text,
+                    int.Parse(ewPas2_maskedTextBox.Text), CurrentWorker.Birth,
+                    CurrentWorker.Gen, CurrentWorker.Job,
+                    CurrentWorker.Stage, ewPhone_maskedTextBox.Text,
                     ewMail_textBox.Text);
 
                 if (worker.Update())

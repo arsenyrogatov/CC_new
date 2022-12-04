@@ -1042,6 +1042,51 @@ namespace CC
 
             return int.Parse(UpdateProject.Parameters["@Response"].Value.ToString()) == 0;
         }
+
+        public bool Add()
+        {
+            System.Data.SqlClient.SqlCommand UpdateProject = new System.Data.SqlClient.SqlCommand("AddProject", DBConnection.connection);
+            UpdateProject.CommandType = System.Data.CommandType.StoredProcedure;
+
+            UpdateProject.Parameters.Add("@ClientId", System.Data.SqlDbType.Int);
+            UpdateProject.Parameters["@ClientId"].Value = ClientId;
+
+            UpdateProject.Parameters.Add("@WorkerId", System.Data.SqlDbType.Int);
+            UpdateProject.Parameters["@WorkerId"].Value = WorkerId;
+
+            UpdateProject.Parameters.Add("@Descr", System.Data.SqlDbType.VarChar, 80);
+            UpdateProject.Parameters["@Descr"].Value = Descr;
+
+            UpdateProject.Parameters.Add("@Addr", System.Data.SqlDbType.VarChar, 50);
+            UpdateProject.Parameters["@Addr"].Value = Addr;
+
+            UpdateProject.Parameters.Add("@Price", System.Data.SqlDbType.Decimal);
+            UpdateProject.Parameters["@Price"].Value = Price;
+
+            UpdateProject.Parameters.Add("@Start", System.Data.SqlDbType.Date);
+            UpdateProject.Parameters["@Start"].Value = Start;
+
+            UpdateProject.Parameters.Add("@End", System.Data.SqlDbType.Date);
+            UpdateProject.Parameters["@End"].Value = End;
+
+            UpdateProject.Parameters.Add("@Status", System.Data.SqlDbType.VarChar, 10);
+            UpdateProject.Parameters["@Status"].Value = Status;
+
+            UpdateProject.Parameters.Add("@Type", System.Data.SqlDbType.VarChar, 40);
+            UpdateProject.Parameters["@Type"].Value = Type;
+
+            UpdateProject.Parameters.Add("@Doc", System.Data.SqlDbType.VarChar, 10);
+            UpdateProject.Parameters["@Doc"].Value = Doc;
+
+            UpdateProject.Parameters.Add("@Response", System.Data.SqlDbType.Int);
+            UpdateProject.Parameters["@Response"].Direction = ParameterDirection.Output;
+
+            DBConnection.Open();
+            UpdateProject.ExecuteNonQuery();
+            DBConnection.Close();
+
+            return int.Parse(UpdateProject.Parameters["@Response"].Value.ToString()) == 0;
+        }
     }
 
 }
