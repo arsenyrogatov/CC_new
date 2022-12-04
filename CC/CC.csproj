@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{76342FA4-7C4B-406B-B1D3-D20FBC440F24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CC</RootNamespace>
+    <AssemblyName>CC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>img\Skyscrapers.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapter.cs" />
+    <Compile Include="AddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClientForm.Designer.cs">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMaterialForm.Designer.cs">
+      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupForm.Designer.cs">
+      <DependentUpon>AddSupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWorkerForm.Designer.cs">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateWorkerForm.Designer.cs">
+      <DependentUpon>UpdateWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkerForm.Designer.cs">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMaterialForm.resx">
+      <DependentUpon>AddMaterialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSupForm.resx">
+      <DependentUpon>AddSupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWorkerForm.resx">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UpdateWorkerForm.resx">
+      <DependentUpon>UpdateWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkerForm.resx">
+      <DependentUpon>WorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\accountant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\architect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\director.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\engineer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\salesman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Skyscrapers.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HGNJpNmNrkA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 828.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 8281.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mask group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mask group1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mask group11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mask group2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector 27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector 28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector 30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42480buildingconstruction_99093.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42480buildingconstruction_99093 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-delivery-time-3575442.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipment_logistics_hub_automation_warehouse_box_icon_225145.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipment_logistics_hub_automation_warehouse_box_icon_225145 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\42480buildingconstruction_99093 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipment_logistics_hub_automation_warehouse_box_icon_225145 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-paint-roller-9103191.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-paint-roller-9103191 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-toolbox-1366132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-toolbox-1366132 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-worker-560185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-delivery-time-2802031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-big-house-3033232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-hammer-6788573.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-hammer-6788573 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-budget-6953330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-customer-review-1379505.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-employees-554846.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
